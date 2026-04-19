@@ -100,9 +100,8 @@ const ContactSection = () => {
 
         <div className="gsap-reveal flex items-center justify-center gap-4 mt-12">
           {[
-            { icon: Github, href: "#", label: "GitHub" },
-            { icon: Linkedin, href: "#", label: "LinkedIn" },
-            { icon: Twitter, href: "#", label: "Twitter" },
+            { icon: Github, href: "github.com/anshsing", label: "GitHub" },
+            { icon: Linkedin, href: "www.linkedin.com/in/anshsingh132", label: "LinkedIn" },
           ].map(({ icon: Icon, href, label }, i) => (
             <a
               key={label}
