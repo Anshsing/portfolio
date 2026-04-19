@@ -77,7 +77,7 @@ const HeroSection = () => {
                 Get In Touch
               </a>
               <a
-                href="/public/Ansh singh_resume.pdf"
+                href="/portfolio/Ansh singh_resume.pdf"
                 download
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card text-foreground font-medium hover:bg-muted transition-all duration-300"
               >
