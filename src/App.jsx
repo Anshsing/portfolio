@@ -217,26 +217,25 @@ export default function App() {
       case '/about':
         response = [
           'AGENT: Ansh Singh',
-          'ROLE: LEAD CREATIVE CYBER-ENGINEER',
-          'FOCUS: FRONTEND DEV / INTERACTIVE DESIGN / WEBGL',
-          'LOCATION: GRID SECTION IND'
+          'ROLE: Fullstack Dev',
+          'FOCUS: MERN Stack ',
+          'LOCATION: MP, IND'
         ];
         break;
       case '/projects':
         response = [
           'COMPLETED PROJECTS IN CONSOLE:',
-          '  1. HYPERION 3D PORTAL (WEBGL)',
-          '  2. AERODASHBOARD (GLASSPHORMIC SAAS)',
-          '  3. SYNAPSE STUDIO (CREATIVE GRID EDITOR)'
+          '  1. Localist- Hyperlocal cloth discovery',
+          '  2. Algorithm Visualizer'
         ];
         break;
       case '/skills':
         response = [
           'SKILLS PROFILE DETECTED:',
-          '  [HTML/CSS]  ■■■■■■■■■■ 98%',
           '  [REACT/JS]  ■■■■■■■■■□ 92%',
-          '  [CREATIVE]  ■■■■■■■■■□ 95%',
-          '  [WEBGL/GL]  ■■■■■■■■□□ 80%'
+          '  [DSA]  ■■■■■■■■■■ 98%',
+          '  [Express.js]  ■■■■■■■■□□ 80%',
+          '  [MONGODB]  ■■■■■■■■■□ 95%'
         ];
         break;
       case '/sound':
