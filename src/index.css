@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  
+  --color-cyber-pink: #ff007f;
+  --color-cyber-blue: #00f0ff;
+  --color-cyber-purple: #9d4edd;
+  --color-cyber-yellow: #ffee00;
+  --color-cyber-dark: #0d0d11;
+  --color-cyber-darker: #050508;
+  
+  --animate-glitch: glitch 1s linear infinite;
+  --animate-scanline: scanline 8s linear infinite;
+  --animate-border-glow: border-glow 4s ease infinite;
+  --animate-fade-in: fade-in 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-scale-in: scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes glitch {
+    0% {
+      clip-path: inset(40% 0 61% 0);
+      transform: skew(0.3deg);
+    }
+    20% {
+      clip-path: inset(92% 0 1% 0);
+      transform: skew(-0.5deg);
+    }
+    40% {
+      clip-path: inset(15% 0 80% 0);
+      transform: skew(0.5deg);
+    }
+    60% {
+      clip-path: inset(80% 0 5% 0);
+      transform: skew(-0.3deg);
+    }
+    80% {
+      clip-path: inset(5% 0 92% 0);
+      transform: skew(0.8deg);
+    }
+    100% {
+      clip-path: inset(40% 0 61% 0);
+      transform: skew(0deg);
+    }
+  }
+
+  @keyframes scanline {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes border-glow {
+    0%, 100% {
+      border-color: #ff007f;
+    }
+    50% {
+      border-color: #00f0ff;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/* Custom Base Styles */
+@layer base {
+  body {
+    background-color: var(--color-cyber-darker);
+    color: #f3f4f6;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-cyber-dark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-cyber-pink);
+    border: 2px solid var(--color-cyber-dark);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-cyber-blue);
+  }
+}
+
+/* Custom neo-brutalist helper classes */
+.neo-box {
+  background-color: var(--color-cyber-dark);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0px 0px #000;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.neo-box:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px 0px #000;
+}
+
+.neo-box-pink {
+  box-shadow: 4px 4px 0px 0px var(--color-cyber-pink);
+}
+
+.neo-box-pink:hover {
+  box-shadow: 8px 8px 0px 0px var(--color-cyber-pink);
+}
+
+.neo-box-blue {
+  box-shadow: 4px 4px 0px 0px var(--color-cyber-blue);
+}
+
+.neo-box-blue:hover {
+  box-shadow: 8px 8px 0px 0px var(--color-cyber-blue);
+}
+
+.neo-box-purple {
+  box-shadow: 4px 4px 0px 0px var(--color-cyber-purple);
+}
+
+.neo-box-purple:hover {
+  box-shadow: 8px 8px 0px 0px var(--color-cyber-purple);
+}
+
+.neo-box-yellow {
+  box-shadow: 4px 4px 0px 0px var(--color-cyber-yellow);
+}
+
+.neo-box-yellow:hover {
+  box-shadow: 8px 8px 0px 0px var(--color-cyber-yellow);
+}
+
+.neo-btn {
+  background-color: var(--color-cyber-pink);
+  color: #000;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0px 0px #000;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #000;
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+/* Custom terminal background matrix scanlines */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 999;
+  pointer-events: none;
+}
