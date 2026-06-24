@@ -1,16 +1,105 @@
-# React + Vite
+# 🚀 Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive developer portfolio built with **React** and **Vite** to showcase my projects, skills, experience, and achievements.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Responsive design for all devices
+* Modern UI/UX
+* Project showcase section
+* Skills and technologies section
+* About Me section
+* Contact section
+* Fast performance with Vite
+* Easy customization
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+* React
+* Vite
+* JavaScript
+* HTML5
+* CSS3
+* Git & GitHub
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚡ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/portfolio.git
+```
+
+### 2. Navigate to Project Directory
+
+```bash
+cd portfolio
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Start Development Server
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+## 🏗️ Build for Production
+
+Generate an optimized production build:
+
+```bash
+npm run build
+```
+
+---
+
+## 👀 Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## 📸 Portfolio Sections
+
+* Hero Section
+* About Me
+* Skills
+* Projects
+* Experience
+* Contact
+* Footer
+
+---
+
+
+## 📬 Contact
+
+Feel free to connect with me:
+
+* LinkedIn
+* GitHub
+* Email
+
+
+---
+
+### ⭐ If you like this portfolio, consider giving it a star!
