@@ -394,7 +394,7 @@ export default function App() {
               CYBER ART
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-lg border-l-4 border-cyber-blue pl-4">
-              I am Ansh Singh. A creative front-end engineer crafting high-performance, responsive interfaces packed with neon styling, interactive console commands, and fluid dynamics.
+              I am Ansh Singh. A creative full-stack engineer bridging scalable backend logic with fluid, highly responsive user interfaces. I focus on building fast, dynamic digital experiences from the database to the pixel.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
@@ -508,10 +508,9 @@ export default function App() {
                 Blending procedural systems with raw retro aesthetics.
               </h3>
               <p className="text-gray-300 leading-relaxed text-sm">
-                I develop interactive spaces that live at the intersection of coding architecture and cyberpunk aesthetics. Over five years of professional workspace engagement, I have delivered premium interfaces to ambitious startups and creative development studios.
-              </p>
-              <p className="text-gray-300 leading-relaxed text-sm">
-                My execution patterns emphasize solid front-end foundations (highly responsive layout blocks, semantic layouts) paired with high-impact micro-animations, neon board grids, custom CSS spring movements, and procedural audio synthesis.
+                I develop interactive digital spaces that live at the intersection of scalable backend architecture and creative design. As a full-stack engineer, I craft high-performance, responsive interfaces and robust systems with a focus on fluid interactivity and clean code.
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  My execution patterns emphasize solid Full-Stack foundations (highly responsive layout blocks, scalable systems) combined with ability to craft seamless user interfaces and robust, secure systems</p>
               </p>
             </div>
           </div>
