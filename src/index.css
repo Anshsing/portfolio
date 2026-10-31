@@ -82,10 +82,23 @@
       opacity: 1;
     }
   }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100vw);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 /* Custom Base Styles */
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     background-color: var(--color-cyber-darker);
     color: #f3f4f6;

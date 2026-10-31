@@ -259,7 +259,12 @@ export default function App() {
     if (audioEnabled) playSound(800, 'sine', 0.05, 0.03);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Offset by the sticky header height so the section title isn't hidden
+      const headerEl = document.querySelector('header');
+      const bannerEl = document.querySelector('header')?.previousElementSibling;
+      const headerHeight = (headerEl?.offsetHeight ?? 0) + (bannerEl?.offsetHeight ?? 0);
+      const elementTop = element.getBoundingClientRect().top + window.scrollY - headerHeight - 8;
+      window.scrollTo({ top: elementTop, behavior: 'smooth' });
     }
     setShowMobileMenu(false);
   };
@@ -291,7 +296,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-cyber-darker text-gray-200 selection:bg-cyber-yellow selection:text-black">
+    <div className="relative min-h-screen bg-cyber-darker text-gray-200 selection:bg-cyber-yellow selection:text-black overflow-x-hidden">
       {/* Neo scanlines backdrop */}
       <div className="scanlines"></div>
 
@@ -343,12 +348,13 @@ export default function App() {
 
         {/* Audio Toggle & Mobile Menu Trigger */}
         <div className="flex items-center gap-3">
+          {/* Sound button — desktop only; on mobile it lives inside the hamburger menu */}
           <button
             onClick={() => {
               setAudioEnabled(!audioEnabled);
               playSound(440, 'sine', 0.1, 0.05);
             }}
-            className={`p-2 border-2 border-black font-extrabold text-xs uppercase shadow-[2px_2px_0px_#000] active:translate-y-0.5 ${audioEnabled ? 'bg-cyber-yellow text-black' : 'bg-cyber-dark text-gray-400'
+            className={`hidden md:inline-flex p-2 border-2 border-black font-extrabold text-xs uppercase shadow-[2px_2px_0px_#000] active:translate-y-0.5 ${audioEnabled ? 'bg-cyber-yellow text-black' : 'bg-cyber-dark text-gray-400'
               }`}
           >
             🔊 Sound: {audioEnabled ? 'ON' : 'OFF'}
@@ -374,29 +380,43 @@ export default function App() {
               {section.toUpperCase()}
             </button>
           ))}
+          {/* Sound toggle inside mobile menu */}
+          <button
+            onClick={() => {
+              setAudioEnabled(!audioEnabled);
+              playSound(440, 'sine', 0.1, 0.05);
+            }}
+            className={`w-full py-2 text-left px-3 border-2 border-black text-xs uppercase transition-colors ${
+              audioEnabled
+                ? 'bg-cyber-yellow text-black'
+                : 'hover:bg-cyber-pink hover:text-black'
+            }`}
+          >
+            🔊 Sound: {audioEnabled ? 'ON' : 'OFF'}
+          </button>
         </div>
       )}
 
       {/* Main Core Layout */}
-      <main className="max-w-7xl mx-auto p-4 md:p-8 flex flex-col gap-16 relative z-10">
+      <main className="max-w-7xl mx-auto p-4 md:p-8 flex flex-col gap-16 relative z-10 min-w-0">
 
         {/* HERO SECTION */}
-        <section id="hero" className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-8">
-          <div className="lg:col-span-7 flex flex-col items-start gap-6">
+        <section id="hero" className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-8 min-w-0">
+          <div className="lg:col-span-7 flex flex-col items-start gap-6 min-w-0 w-full">
             <span className="bg-cyber-blue text-black font-heading font-extrabold uppercase px-3 py-1 text-xs border-2 border-black shadow-[2px_2px_0px_#000]">
               [ GRID LAYER: STABLE ]
             </span>
-            <h1 className="font-heading font-extrabold text-5xl md:text-7xl leading-tight text-white uppercase tracking-tighter">
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-7xl leading-tight text-white uppercase tracking-tighter break-words w-full">
               CRAFTING <br />
               <span className="bg-cyber-pink text-black px-4 inline-block transform -rotate-1 shadow-[4px_4px_0px_#000] border-3 border-black">
                 IMMERSIVE
               </span> <br />
               CYBER ART
             </h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-lg border-l-4 border-cyber-blue pl-4">
+            <p className="text-gray-400 text-base md:text-xl max-w-lg border-l-4 border-cyber-blue pl-4">
               I am Ansh Singh. A creative full-stack engineer bridging scalable backend logic with fluid, highly responsive user interfaces. I focus on building fast, dynamic digital experiences from the database to the pixel.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => handleNavClick('projects')}
                 className="neo-btn px-6 py-3 font-heading font-black"
