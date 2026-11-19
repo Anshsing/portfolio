@@ -88,6 +88,37 @@ const PROJECTS_DATA = [
     demoLink: 'http://anshsingh.me/sorting-visualizer/',
     sourceLink: 'https://github.com/Anshsing/sorting-visualizer/'
   },
+  {
+    id: 3,
+    num: '03',
+    title: 'Synchronise - Watch Party',
+    category: 'Fullstack app',
+    shortDesc: 'Watch movies with your friends in real-time with Synchronise.',
+    longDesc: 'Tcp based watch party application for seamless synchronized video streaming',
+    features: [
+      'Real-time video synchronization',
+      'Cross platform app',
+      'Better Quaity than UDP based video streaming'
+    ],
+    tags: ['Node.js', 'Express.js', 'React Native', 'Socket.IO'],
+    boxClass: 'neo-box-purple',
+    textClass: 'text-cyber-purple',
+    bgMutedClass: 'bg-cyber-purple/20',
+    borderMutedClass: 'border-cyber-purple/30',
+    hoverBgClass: 'group-hover:bg-cyber-purple/10',
+    hoverTextClass: 'group-hover:text-cyber-purple',
+    altTextClass: 'text-cyber-pink',
+    icon: (
+      <svg className="w-12 h-12 text-cyber-purple group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+        <line x1="12" y1="22" x2="12" y2="15.5"></line>
+        <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+        <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+      </svg>
+    ),
+    demoLink: 'https://frontend-anshsings-projects.vercel.app/',
+    sourceLink: 'https://github.com/Anshsing/synchronize-watch-party'
+  }
 
 ];
 
@@ -386,11 +417,10 @@ export default function App() {
               setAudioEnabled(!audioEnabled);
               playSound(440, 'sine', 0.1, 0.05);
             }}
-            className={`w-full py-2 text-left px-3 border-2 border-black text-xs uppercase transition-colors ${
-              audioEnabled
-                ? 'bg-cyber-yellow text-black'
-                : 'hover:bg-cyber-pink hover:text-black'
-            }`}
+            className={`w-full py-2 text-left px-3 border-2 border-black text-xs uppercase transition-colors ${audioEnabled
+              ? 'bg-cyber-yellow text-black'
+              : 'hover:bg-cyber-pink hover:text-black'
+              }`}
           >
             🔊 Sound: {audioEnabled ? 'ON' : 'OFF'}
           </button>
@@ -550,28 +580,28 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Exp Card 1 */}
             <div className="neo-box neo-box-purple p-6 flex flex-col gap-4 relative overflow-hidden group">
-              <span className="absolute top-2 right-2 bg-cyber-pink text-black font-mono text-[10px] font-bold px-2 py-0.5 uppercase border border-black">
+              {/*<span className="absolute top-2 right-2 bg-cyber-pink text-black font-mono text-[10px] font-bold px-2 py-0.5 uppercase border border-black">
                 ACTIVE
-              </span>
-              <span className="font-mono text-xs text-cyber-pink font-extrabold">June, 2026 - July, 2026</span>
+              </span>*/}
+              <span className="font-mono text-xs text-cyber-pink font-extrabold">July 2025 – January 2026</span>
               <h3 className="font-heading font-extrabold text-xl text-white group-hover:text-cyber-pink transition-colors">
-                Frontend Developer Intern
+                Full Stack Developer Intern
               </h3>
-              <span className="text-cyber-blue font-mono font-bold text-xs">Flutter Flirt</span>
+              <span className="text-cyber-blue font-mono font-bold text-xs">YouthConnekt</span>
               <p className="text-gray-400 text-xs leading-relaxed border-t-2 border-black/40 pt-3">
-                Lead frontend engineering on React websites. Built interactive UI core layers and landing pages for Flutter Flirt’s new SaaS product launch.
+                Contributed to the development of various website and webapps for various clients and creating functional fullstack applications.
               </p>
             </div>
 
-            {/* Exp Card 2 
+            {/*Exp Card 2 */}
             <div className="neo-box neo-box-blue p-6 flex flex-col gap-4 relative overflow-hidden group">
-              <span className="font-mono text-xs text-cyber-blue font-extrabold">2022 - 2024</span>
+              <span className="font-mono text-xs text-cyber-blue font-extrabold">June, 2026 - July, 2026</span>
               <h3 className="font-heading font-extrabold text-xl text-white group-hover:text-cyber-blue transition-colors">
-                Interactive Developer
+                Frontend Developer Intern
               </h3>
-              <span className="text-cyber-purple font-mono font-bold text-xs">Vapor Labs Inc.</span>
+              <span className="text-cyber-purple font-mono font-bold text-xs">Flutter Flirt</span>
               <p className="text-gray-400 text-xs leading-relaxed border-t-2 border-black/40 pt-3">
-                Designed and built SaaS dashboard analytics interfaces with high-performance CSS grids. Engineered complex user flows, layout transitions, and fluid animations.
+                Lead frontend engineering on React websites. Built interactive UI core layers and landing pages for Flutter Flirt’s new SaaS product launch.
               </p>
             </div>
 
